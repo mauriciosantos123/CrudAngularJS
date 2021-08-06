@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg text-center">
+      <div class="card-body">
+
+        <h3>{{vm.teste}}</h3>
+        <div>
+          <div class="container" ng-if="vm.erro">
+              <alert-para-usuario msg="'Cadastrado com Sucesso'" tipo="'sucesso'"></alert-para-usuario>
+          </div>
+      </div>
+        <form>
+
+          <div class="card-deck">
+            <div class="card">
+
+              <div class="card-body">
+                <div class="row">
+                  <div class="col pb-3">
+                    <input type="text" class="form-control w-25 float-lg-right " id="id" ng-model="vm.blogs.id" placeholder="ID">
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col">
+                    <input type="text" class="form-control " id="titulo" ng-model="vm.blogs.titulo"
+                      placeholder="Titulo do blogs">
+                  </div>
+                  <div class="col">
+
+                    <input type="text" class="form-control" id="desc" ng-model="vm.blogs.desc" placeholder="Descrição ">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control " id="autor" ng-model="vm.blogs.autor" placeholder="Autor">
+                  </div>
+                  <div class="col">
+
+                    <input type="text" class="form-control" id="tema" ng-model="vm.blogs.tema" placeholder="Tema">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="pt-3">
+          <button type="button" class="btn btn-primary" ng-click="vm.cadastrar()">{{vm.textoButao}}</button>
+          <button type="button" class="btn btn-secondary" ng-click="vm.limpar()">Limpar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>

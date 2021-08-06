@@ -1,0 +1,19 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-route": "^1.5.8",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.6.0"
+  }
+}

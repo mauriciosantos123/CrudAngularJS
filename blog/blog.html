@@ -1,0 +1,45 @@
+<div class="container" ng-init=vm.init()>
+    <div class="card-body">
+        <div>
+            <div class="container" ng-if="vm.erro">
+                <alert-para-usuario msg="'Coneção com banco de dados falou'" tipo="'erro'"></alert-para-usuario>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg">
+                <input class="form-control float-right m-3 w-25" list="detailsOptions" ng-model="vm.filtroPesquisa"
+                    id="search" placeholder="Buscar">
+                <span class="float-right m-3"><i class="fa fa-search"></i></span>
+
+            </div>
+        </div>
+
+
+        <div class="card-deck">
+            <div class="card" ng-repeat="blogs in vm.blogs | filter : vm.filtroPesquisa">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{blogs.titulo}}</h5>
+                    <p class="card-text">{{blogs.desc}}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{blogs.autor}}</small><br>
+                    <small class="text-muted">{{blogs.tema}}</small>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-warning"
+                        ng-click="vm.editar_blog(blogs.id)">Editar</button>
+                    <button type="button" class="btn btn-outline-danger float-right"
+                        ng-click="vm.excluir_blog(blogs.id)">Excluir</button>
+
+                </div>
+
+            </div>
+          
+
+        </div>
+    </div>
+    <div class="text-center">   <button type="button" class="btn btn-primary" ng-click="vm.navegar_no_id('Cadastro-Blog')">Cadastrar Novo Blog</button></div>
+
+</div>

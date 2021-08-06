@@ -1,0 +1,42 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "joão",
+      "rg": "12356546"
+    },
+    {
+      "id": 3,
+      "nome": "pedro",
+      "rg": "12356546"
+    },
+    {
+      "id": 4,
+      "nome": "arthur",
+      "rg": "12356546"
+    }
+  ],
+  "blog": [
+    {
+      "id": 2,
+      "titulo": "A Maratona",
+      "autor": "Stefanini",
+      "tema": "Desafios",
+      "desc": "A Luta de jovens programadores para entra ne uma das empresas mais requisiada do Brasil "
+    },
+    {
+      "id": 3,
+      "titulo": "A Grande Conquista",
+      "autor": "Mauricio Dos Santos Vieira",
+      "tema": "Superação",
+      "desc": "Um jovem com muito esforço e pouco tempo ganha uma grande oportunidade de entrar em uma das maiores empresas do brasil "
+    },
+    {
+      "titulo": "teste",
+      "desc": "teste",
+      "autor": "teste",
+      "tema": "teste",
+      "id": "5"
+    }
+  ]
+}

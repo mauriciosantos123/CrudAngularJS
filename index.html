@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Curso AngularJS</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"> </script>
+
+    <script src="curso-app.js"> </script>
+    <script src="curso-router.js"></script>
+    <script src="curso-service.js"></script>
+    <script src="cadastro/cadastro-controller.js"></script>
+    <script src="home/home-controller.js"></script>
+    <script src="blog/blog-controller.js"></script>
+    <script src="cadastro_blog/cadastro-blog-controller.js"></script>
+    <script src="componente/componente-alert.js"></script>
+    <script src="componente/alert.html"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+</head>
+<script>
+    angular.module('app').controller('MenuController', MenuController);
+    MenuController.$inject = ['$location'];
+
+    function MenuController($location) {
+        vm = this
+        vm.itensMenu = [{
+                titulo: 'Home',
+                class: 'nav-link active '
+            },
+            {
+                titulo: 'Cadastro',
+                class: 'nav-link'
+            },
+            {
+                titulo: 'Blog',
+                class: 'nav-link'
+            },
+        ]
+        vm.navegar = function (rota, array) {
+
+            angular.forEach(array, function (item) {
+                if (item.titulo == rota) {
+                    item.class = 'nav-link active '
+                } else {
+                    item.class = 'nav-link'
+                }
+            })
+
+            $location.path(rota)
+        }
+    }
+</script>
+
+
+
+<body>
+
+
+    <div class="container pt-3">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" ng-controller="MenuController as vm" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item" ng-repeat="item in vm.itensMenu">
+                        <a ng-class="item.class" ng-click="vm.navegar(item.titulo,vm.itensMenu)">{{item.titulo}}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ng-view trazer as outras paginas  -->
+        <div ng-view></div>
+    </div>
+
+</body>
+
+</html>
